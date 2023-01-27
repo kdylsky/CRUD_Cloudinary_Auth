@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Animal</title>
+</head>
+<body>
+    <h1>Edit Animal</h1>
+    <form action="/animal/<%= animal._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Animal Name</label>
+            <br>
+            <input type="text" id="name" name="name" value="<%= animal.name %>">
+        </div>
+        <br>
+        <div>
+            <label for="description">Description</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="10">
+                <%= animal.description %>
+            </textarea>
+        </div>
+        <br>
+        <div>
+            <label for="lifespan">Animal lifespan</label>
+            <br>
+            <input type="number" id="lifespan" name="lifespan" value="<%= animal.lifespan %>">
+        </div>
+        <br>
+        <div>
+            <label for="image">upload image</label>
+            
+            <!-- 단일 파일을 받는 경우 -->
+            <!-- <input type="file" id="image" name="image"> -->
+            
+            <!-- 다중 파일을 받는 경우 -->
+            <input type="file" id="image" name="image" multiple>
+        </div>
+        <br>
+        <div>
+            <% animal.images.forEach(function(img, i){ %>
+                <img src="<%= img.arrageImageSize %>" alt="">    
+                <div>
+                    <input type="checkbox" id="img-<%= i %>" name="deleteImages[]" value="<%= img.filename%>">
+                    <label for="img-<%= i %>">Delete?</label>
+                </div>
+            <% }) %>  
+        </div>
+        <br>
+        <button>Edit Animal</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<body>
+    <h1>HomePage</h1>
+    <div>
+        Do you want our Animal Dictionary???? if you want it, cleak this : <a href="/animal">Show animal</a>
+    </div>
+    <% if( !currentUser) {%>
+        <div>
+            <button><a href="/register">register</a></button>
+        </div>
+        <div>
+            <button><a href="/login">login</a></button>
+        </div>
+    <% }else{ %>   
+        <div>
+            <form action="/logout" method="POST">
+                <button>logout</button>
+            </form>    
+        </div>
+    <% } %> 
+    
+    
+    
+</body>
+</html>

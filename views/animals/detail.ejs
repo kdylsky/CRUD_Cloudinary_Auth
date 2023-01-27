@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Animal</title>
+</head>
+<body>
+    <h1><%= animal.name %></h1>
+    
+    <h2><%= animal.description %> </h2>
+    
+    <div>
+        <% for (let image of animal.images) {%>
+            <img src="<%= image.arrageImageSize %>" alt="">
+        <%} %>
+    </div>
+    <a href="/animal/<%= animal._id %>/edit ">Edit Animal</a>
+    <a href="/animal ">Back To Animal-List</a>
+    <br>
+    <form action="/animal/<%= animal._id %>?_method=DELETE" method="POST">
+        <button>DELETE animal</button>
+    </form>
+    <h4> Create by <%= animal.user.nickname %> </h4>
+</body>
+</html>

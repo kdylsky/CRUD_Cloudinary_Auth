@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Animal</title>
+</head>
+<body>
+    <h1>Add Animal</h1>
+    <form action="/animal" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Animal Name</label>
+            <br>
+            <input type="text" id="name" name="name" placeholder="animal name">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="lifespan">Animal lifespan</label>
+            <br>
+            <input type="number" id="lifespan" name="lifespan" placeholder="animal lifespan">
+        </div>
+        <div>
+            <label for="image">upload image</label>
+            
+            <!-- 단일 파일을 받는 경우 -->
+            <!-- <input type="file" id="image" name="image"> -->
+            
+            <!-- 다중 파일을 받는 경우 -->
+            <input type="file" id="image" name="image" multiple>
+        </div>
+        <!-- <div>
+            <label for="url">url</label>
+            <br>
+            <input type="text" id="url" name="images[url]" placeholder="url">
+        </div>
+        <div>
+            <label for="filename">filename</label>
+            <br>
+            <input type="text" id="filename" name="images[filename]" placeholder="filename">
+        </div> -->
+        <button>Add new Animal</button>
+    </form>
+    
+</body>
+</html>
